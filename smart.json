@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "font-awesome": {},
+    "iron-router": {},
+    "bootstrap-3": {},
+    "sass": {},
+    "lodash": {}
+  }
+}

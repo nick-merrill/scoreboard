@@ -1,0 +1,46 @@
+<head>
+  <title>Scoreboard</title>
+</head>
+
+<template name="layout">
+  <div class="my-container">
+    {{> yield}}
+  </div>
+</template>
+
+<template name="main">
+  <h1>Scoreboard</h1>
+  {{#if edit}}
+    <button class="add btn btn-default"><i class="fa fa-plus"></i> Add Team</button>
+  {{/if}}
+  <div class="team-group">
+    {{#each teams}}
+      {{> team}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="team">
+  <div class="team" data-id="{{_id}}">
+    {{#if ../edit}}
+      <input class="name" value="{{name}}">
+    {{else}}
+      <h2>{{name}}</h2>
+    {{/if}}
+    <div class="score">
+      {{score}}
+    </div>
+    <br />
+    {{#if ../edit}}
+      {{> buttons}}
+      <button class="remove btn-xs btn-default btn"><i class="fa fa-times"></i></button>
+    {{/if}}
+  </div>
+</template>
+
+<template name="buttons">
+  <div class="btn-group">
+    <button class="btn btn-danger down"><i class="fa fa-minus"></i></button>
+    <button class="btn btn-success up"><i class="fa fa-plus"></i></button>
+  </div>
+</template>
